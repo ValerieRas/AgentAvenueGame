@@ -8,22 +8,31 @@ interface PlateauProps {
   imageFondUrl?: string;
 }
 
-
 export default function Plateau(props: PlateauProps) {
   return (
     <div className="plateau">
       <div className="plateau-haut">
         {[2, 3, 4, 5].map(value => (
-          <CarrePlateau showValues={props.showValues} id={value} key={value} />
+          <CarrePlateau
+            key={value}
+            orientation="horizontal"
+            showValues={props.showValues}
+            id={value}
+            joueurUnPresent={props.joueurUnPosition === value}
+            joueurDeuxPresent={props.joueurDeuxPosition === value}
+          />
         ))}
       </div>
       <div className="plateau-milieu">
         <div className="plateau-gauche">
           {[1, 0, 13].map(value => (
             <CarrePlateau
+              key={value}
               showValues={props.showValues}
               id={value}
-              key={value}
+              orientation="vertical"
+              joueurUnPresent={props.joueurUnPosition === value}
+              joueurDeuxPresent={props.joueurDeuxPosition === value}
             />
           ))}
         </div>
@@ -36,9 +45,12 @@ export default function Plateau(props: PlateauProps) {
         <div className="plateau-droite">
           {[6, 7, 8].map(value => (
             <CarrePlateau
+              key={value}
               showValues={props.showValues}
               id={value}
-              key={value}
+              orientation="vertical"
+              joueurUnPresent={props.joueurUnPosition === value}
+              joueurDeuxPresent={props.joueurDeuxPosition === value}
             />
           ))}
         </div>
@@ -48,7 +60,10 @@ export default function Plateau(props: PlateauProps) {
           <CarrePlateau
             key={value}
             showValues={props.showValues}
+            orientation="horizontal"
             id={value}
+            joueurUnPresent={props.joueurUnPosition === value}
+            joueurDeuxPresent={props.joueurDeuxPosition === value}
           />
         ))}
       </div>
