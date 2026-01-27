@@ -11,11 +11,34 @@
 
 .main {
   display: flex;
-  flex-direction: row; 
+  flex-direction: column; 
   justify-content: center; 
   gap: 8px;
   align-items: center;
   justify-content: center;
+}
+
+.liste-carte-main {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  gap: 8px;     
+  align-items: center;
+  justify-content: center;
+} 
+
+.btn-valider-carte {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-valider-carte :disabled {
+  background-color: #9E9E9E;
+  cursor: not-allowed;
 }
 
 .carte-gagnee {
