@@ -5,7 +5,8 @@ export interface CarteProps {
   nom: string,
   couleur: string,
   scores: number[],
-  selectionnee?: boolean
+  selectionnee?: boolean,
+  onClick?: () => void,
 }
 
 const getScoreClass = (score: number) => {
@@ -30,6 +31,7 @@ export function Carte(
       position: "relative",
       top: props.selectionnee ? "-30px" : "0px",
     }}
+    onClick={props.onClick}
   >
     <h4 className="carte-nom">{props.nom}</h4>
     <div className="carte-scores">
