@@ -3,23 +3,26 @@
   flex-direction: column; 
   border-radius: 8px;
   gap: 16px; 
-  width: 100%; 
-  max-width: 600px;
-  height: auto;    
+  flex-wrap:wrap;
+  height: auto;   
+  align-items: center;
+  justify-content: center; 
 }
 
 .main {
   display: flex;
-  flex-direction: column; 
+  flex-direction: row; 
   justify-content: center; 
-  gap: 8px; 
-
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
 }
 
 .carte-gagnee {
   display: flex;
-  flex-direction: column; 
+  flex-direction: row; 
   flex-wrap: wrap; 
-  gap: 5px;     
-  
+  gap: 8px;     
+  align-items: center;
+  justify-content: center;
 }
