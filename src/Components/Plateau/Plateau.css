@@ -61,9 +61,9 @@
 }
 
 .carre-plateau-start-player1 {
-  background-color: rgb(35, 98, 147);
+  background-color: darkgreen;
 }
 
 .carre-plateau-start-player2 {
-  background-color: darkgreen;
+  background-color: rgb(35, 98, 147);
 }
