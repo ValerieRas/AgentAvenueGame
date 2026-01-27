@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Carte} from "../Carte/Carte";
 import type { CarteProps } from "../Carte/Carte";
 import "./joueur.css"; 
@@ -9,15 +9,29 @@ interface JoueurProps {
   hand: CarteProps[];
   carteGagnee : CarteProps[];
   carteSelectionee: CarteProps[];
+  isActive: boolean;
 }
 
 export function Joueur(
     props: JoueurProps
 ) {
+    const joueurClass = useMemo(() => {
+    let className = "zone-joueur";
+    if (props.isActive) {
+      className += " joueur-actif"; 
+    } else {
+      className += " joueur-inactif"; 
+    }
+    return className;
+  }, [props.isActive]); 
+  
     const [selectionneeIndex, setSelectionneeIndex] = useState<number[]>([]);
 
     
   const handleCardClick = (index: number) => {
+
+     if (!props.isActive) return; 
+
     setSelectionneeIndex((prevIndexes) => {
       // If card is already selected, remove it (deselect)
       if (prevIndexes.includes(index)) {
@@ -28,24 +42,24 @@ export function Joueur(
       if (prevIndexes.length < 2) {
         return [...prevIndexes, index];
       }
-
-      // If we already have 2, do nothing (or you could replace the last one)
+      // If we already have 2, do nothing
       return prevIndexes;
     });
   };
 
   const handleValidate = () => {
+     if (!props.isActive) return; 
+     
     if (selectionneeIndex.length === 2) {
         props.carteSelectionee.push(
             props.hand[selectionneeIndex[0]],
             props.hand[selectionneeIndex[1]]);
-        setSelectionneeIndex([]);
-        
+        setSelectionneeIndex([]);      
     }
   };
 
   return (
-    <div className="zone-joueur" id={props.id}>
+    <div className={joueurClass} id={props.id}>
 
       <h2 className="joueur-nom">{props.name}</h2>
 

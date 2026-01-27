@@ -27,6 +27,7 @@ function App() {
       hand={[listeCartes[0], listeCartes[1], listeCartes[2], listeCartes[3]]} 
       carteGagnee={[]}
       carteSelectionee={[]}
+      isActive={true}
       />
 
       <Plateau
@@ -39,7 +40,9 @@ function App() {
       <Joueur id="2" name="Joueur 2" 
       hand={[listeCartes[4], listeCartes[5], listeCartes[6], listeCartes[7]]} 
       carteGagnee={[]}
-      carteSelectionee={[]}/>
+      carteSelectionee={[]}
+      isActive={false}
+      />
       </div>
     </div>
   )
