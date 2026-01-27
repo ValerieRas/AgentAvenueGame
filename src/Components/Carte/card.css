@@ -1,5 +1,5 @@
 .carte {
-  width: 110px;
+  width: 140px;
   height: 200px;
   padding: 16px;
   color: white;
@@ -12,6 +12,36 @@
   .carte-nom {
     text-align: center;
   }
+
+.carte-cachee {
+  background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
+  border: 2px solid #111;
+  cursor: default;
+  width: 140px;
+  height: 200px;
+  padding: 16px;
+}
+
+/* Dos de carte */
+.carte-dos {
+  width: 140px;
+  height: 200px;
+  padding: 16px;
+  border-radius: 12px;
+  background: repeating-linear-gradient(
+    45deg,
+    #2a2a2a,
+    #2a2a2a 10px,
+    #333 10px,
+    #333 20px
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ccc;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
 
   .carte-scores {
     display: flex;

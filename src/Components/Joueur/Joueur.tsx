@@ -8,8 +8,9 @@ interface JoueurProps {
   name: string;
   hand: CarteProps[];
   carteGagnee : CarteProps[];
-  carteSelectionee: CarteProps[];
+  onCardsSelected: (cards: CarteProps[]) => void; 
   isActive: boolean;
+  carteSelectionee: CarteProps[];
 }
 
 export function Joueur(
@@ -30,31 +31,37 @@ export function Joueur(
     
   const handleCardClick = (index: number) => {
 
-     if (!props.isActive) return; 
+    if (!props.isActive) return; 
 
     setSelectionneeIndex((prevIndexes) => {
-      // If card is already selected, remove it (deselect)
+      // Déselectionner une carte
       if (prevIndexes.includes(index)) {
         return prevIndexes.filter((i) => i !== index);
       }
 
-      // If card is not selected, add it ONLY if we have less than 2 selected
+      // Sélectionner carte seulement si moins de 2 cartes sont déjà sélectionnées
       if (prevIndexes.length < 2) {
         return [...prevIndexes, index];
       }
-      // If we already have 2, do nothing
+
       return prevIndexes;
     });
   };
 
   const handleValidate = () => {
-     if (!props.isActive) return; 
+
+    if (!props.isActive) return; 
      
     if (selectionneeIndex.length === 2) {
-        props.carteSelectionee.push(
+        const selectedCards = [
             props.hand[selectionneeIndex[0]],
-            props.hand[selectionneeIndex[1]]);
+            props.hand[selectionneeIndex[1]]
+        ];
+        props.onCardsSelected(selectedCards);
         setSelectionneeIndex([]);      
+
+        props.isActive = false;
+
     }
   };
 
