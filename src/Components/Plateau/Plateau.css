@@ -1,0 +1,69 @@
+.plateau {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .plateau-haut, .plateau-bas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .plateau-milieu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+
+    .plateau-centre {
+      flex: 1;
+      background-size: cover;
+      background-position: center;
+      border-radius: 4px;      
+    }
+
+    .plateau-gauche, .plateau-droite {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+  }
+}
+
+.carre-plateau {
+  width: 60px; 
+  height: 90px;
+  background-color: bisque;
+  border: 3px solid black;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .joueur-un-indicateur, .joueur-deux-indicateur {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+  }
+  .joueur-un-indicateur {
+    background-color: rgb(35, 98, 147);
+  }
+  .joueur-deux-indicateur {
+    background-color: darkgreen;
+  }
+}
+
+.carre-plateau-horizontal {
+  width: 90px;
+  height: 60px;
+}
+
+.carre-plateau-start-player1 {
+  background-color: darkgreen;
+}
+
+.carre-plateau-start-player2 {
+  background-color: rgb(35, 98, 147);
+}
