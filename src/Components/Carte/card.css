@@ -1,0 +1,50 @@
+.carte {
+  width: 110px;
+  height: 200px;
+  padding: 16px;
+  color: white;
+  transition: top 0.3s;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .carte-nom {
+    text-align: center;
+  }
+
+  .carte-scores {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .carte-score {
+      padding: 4px;
+      border: 1px solid whitesmoke;
+      border-radius: 4px;
+      line-height: 1.5;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .carte-score-nul {
+      background-color: rgb(36, 36, 149);
+    }
+
+    .carte-score-negative {
+      background-color: rgb(229, 94, 94);
+    }
+
+    .carte-score-defaite {
+      background-color: rgb(46, 38, 38);
+    }
+
+    .carte-score-positive {
+      background-color: rgb(18, 91, 18);
+    }
+
+    .carte-score-victoire {
+      background-color: rgb(245, 221, 45);
+    }
+  }
+}
