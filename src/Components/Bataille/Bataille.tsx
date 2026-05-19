@@ -7,17 +7,16 @@ interface BatailleProps {
 }
 
 
-
 export function Bataille({ carteJouee }: BatailleProps) {
 
   if (carteJouee.length === 0) {
     return <div className="bataille-container"></div>;
   }
 
-  const [indexCache, setIndexCache] = useState<number>(-1);
+  const [indexCachee, setIndexCachee] = useState<number>(-1);
 
-  const toggleCards = () => {
-    setIndexCache((prev) => (prev === 0 ? 1 : 0));
+  const toggleCarte= () => {
+    setIndexCachee((prev) => (prev === 0 ? 1 : 0));
   };
 
   return (
@@ -26,12 +25,12 @@ export function Bataille({ carteJouee }: BatailleProps) {
                 {carteJouee.map((carte, index) => (
                 <Carte 
                 key={index}
-                isHidden={indexCache === index}
+                isHidden={indexCachee === index}
                 {...carte} 
                 />))}
             </div>
             <div className="btn-container">
-             <button className="btn-cacher-carte" id="btn-cacher-carte-1" onClick={toggleCards}>Cacher</button>  
+             <button className="btn-cacher-carte" id="btn-cacher-carte-1" onClick={toggleCarte}>Cacher</button>  
              <button className="btn-jouer-carte" id="btn-jouer-carte-1">JOUER</button> 
             </div>
     </div>

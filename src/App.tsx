@@ -49,6 +49,8 @@ function App() {
   const [deck, setDeck] = useState<CarteProps[]>([]);
   const [mainJ1, setMainJ1] = useState<CarteProps[]>([]);
   const [mainJ2, setMainJ2] = useState<CarteProps[]>([]);
+  const [scoreJ1, setScoreJ1] = useState<number>(0);
+  const [scoreJ2, setScoreJ2] = useState<number>(7);
   const [activePlayer, setActivePlayer] = useState<number>(1);
   const [carteSelectionnee, setCarteSelectionnee] = useState<CarteProps[]>([]);
 
@@ -73,7 +75,7 @@ function App() {
     }
     setCarteSelectionnee(selectedCards); 
 
-    //Aucun joueur n'a plus sélectionner de carte. 
+    //Aucun joueur ne peut plus sélectionner de carte. 
     setActivePlayer(-1);
   };
 
@@ -81,6 +83,7 @@ function App() {
     <div className="App">
 
       <Bataille carteJouee={carteSelectionnee}></Bataille>
+      
       <div className="conteneur-joueur">
 
       <Joueur id="1" name="Joueur 1" 
@@ -92,8 +95,8 @@ function App() {
       />
 
       <Plateau
-        joueurUnPosition={0}
-        joueurDeuxPosition={7}
+        joueurUnPosition={scoreJ1}
+        joueurDeuxPosition={scoreJ2}
         showValues={true}
         imageFondUrl="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2l0eSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
       ></Plateau>
