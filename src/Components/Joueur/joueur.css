@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column; 
   border-radius: 8px;
-  gap: 16px; 
+  gap: 40px; 
   flex-wrap:wrap;
   height: auto;   
   align-items: center;
@@ -16,6 +16,8 @@
   gap: 8px;
   align-items: center;
   justify-content: center;
+  width:100%;
+  min-height: 200px;
 }
 
 .liste-carte-main {
@@ -48,4 +50,31 @@
   gap: 8px;     
   align-items: center;
   justify-content: center;
+  width:100%;
+  min-height: 200px;
+}
+
+.joueur-inactif {
+  opacity: 0.5; 
+  pointer-events: none; 
+  filter: grayscale(30%);
+}
+
+.recruited-section {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 2px solid #ddd;
+}
+
+.recruited-title {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.recruited-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  opacity: 0.7;
 }

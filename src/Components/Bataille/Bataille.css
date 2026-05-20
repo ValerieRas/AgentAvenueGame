@@ -1,0 +1,53 @@
+.bataille-container{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.carte-jouee{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+.btn-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.btn-cacher-carte{
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-jouer-carte{
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+} 
+
+.btn-jouer-carte:disabled {
+  background-color: #bdbdbd; 
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn-jouer-carte:disabled:hover {
+  background-color: #bdbdbd;
+}
