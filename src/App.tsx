@@ -108,36 +108,36 @@ function App() {
     const j2Crypto = countTotal(j2Cards, "cryptologue");
 
     if (j1Risque >= 3) {
-      alert("Player 1 LOST (3 Risque Tout) !");
+      alert("Le Joueur 1 a perdu (3 Risque Tout) !");
       resetGame();
       return;
     }
 
     if (j2Risque >= 3) {
-      alert("Player 2 LOST (3 Risque Tout) !");
+      alert("Le Joueur 2 a perdu (3 Risque Tout) !");
       resetGame();
       return;
     }
 
     if (j1Crypto >= 3) {
-      alert("Player 1 WON (3 Cryptologue) !");
+      alert("Le Joueur 1 a gagné (3 Cryptologue) !");
       resetGame();
       return;
     }
 
     if (j2Crypto >= 3) {
-      alert("Player 2 WON (3 Cryptologue) !");
+      alert("Le Joueur 2 a gagné (3 Cryptologue) !");
       resetGame();
       return;
     }
 
-    if (scoreJ1 >= 13) {
-      alert("Player 1 WON (position) !");
+    if (scoreJ1 >= 13 && (normalize(scoreJ1) === 0 || normalize(scoreJ1) > normalize(scoreJ2))) {
+      alert("Le Joueur 1 a gagné (position) !");
       resetGame();
     }
 
-    if (scoreJ2 >= 13) {
-      alert("Player 2 WON (position) !");
+    if (scoreJ2 >= 13 && (normalize(scoreJ2) === normalize(0) || normalize(scoreJ2) > normalize(scoreJ1))) {
+      alert("Le Joueur 2 a gagné (position) !");
       resetGame();
     }
   };
